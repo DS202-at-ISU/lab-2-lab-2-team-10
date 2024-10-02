@@ -18,11 +18,12 @@ Include your answers in this document (Rmd file). Make sure that it knits proper
 All submissions to the github repo will be automatically uploaded for grading once the due date is passed.
 Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
 
-
+```{r}
 library(classdata)
 head(ames)
 View(ames)
 colnames(ames)
+```
 
 <<<<<<< HEAD
 =======
@@ -50,7 +51,15 @@ ggplot(ames, aes(x = `Sale Price`)) +
 
 The vast majority of the observations fall in the same general range but there are a few huge outliers that are far more expensive then other observations. 
 
+```{r}
+ggplot(ames, aes(x = Bedrooms, y = `Sale Price`)) +
+  geom_point(color = "blue", size = 1) +
+  labs(title = "Scatterplot of Sale Price vs. Bedrooms",
+       x = "Number of Bedrooms",
+       y = "Sale Price")
+```
 
+<<<<<<< HEAD
 >>>>>>> d1ed39277a9342783dda08270db50865f80d216f
 
 Sales Price to YearBuilt
@@ -90,3 +99,6 @@ ggplot(filtered_ames_data, aes(x = `YearBuilt`, y = `Sale Price`)) +
 
 This helps view the distribution of most sale prices compared to the year built. As the year gets more recent, the price generally goes up. - Kathryn Keck
   
+=======
+There are huge outliers again that ruin the plot in visibility, but there is a rough correlation between having more bathrooms and a higher sales price. --> Emmet Doyle
+>>>>>>> f91d44f49b28a55c06b86f7a95999826eabc37cc
