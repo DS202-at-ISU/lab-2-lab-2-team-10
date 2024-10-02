@@ -58,3 +58,12 @@ ggplot(ames, aes(x = Bedrooms, y = `Sale Price`)) +
 ```
 
 There are huge outliers again that ruin the plot in visibility, but there is a rough correlation between having more bathrooms and a higher sales price. --> Emmet Doyle
+
+```{r}
+library(ggplot2)
+
+ggplot(data=ames, aes(x = `Acres`,y= log(`Sale Price`))) +
+  geom_point()
+```
+
+The majority of homes have a price around 100k to 150k and have less than 2.5 acres. The outliers on the the bottom of the graph are likely emtpy lots, and very few people buy a large acreage. --> Adam Grimm
