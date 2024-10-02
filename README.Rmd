@@ -48,4 +48,12 @@ ggplot(ames, aes(x = `Sale Price`)) +
 
 The vast majority of the observations fall in the same general range but there are a few huge outliers that are far more expensive then other observations. 
 
+```{r}
+ggplot(ames, aes(x = Bedrooms, y = `Sale Price`)) +
+  geom_point(color = "blue", size = 1) +
+  labs(title = "Scatterplot of Sale Price vs. Bedrooms",
+       x = "Number of Bedrooms",
+       y = "Sale Price")
+```
 
+There are huge outliers again that ruin the plot in visibility, but there is a rough correlation between having more bathrooms and a higher sales price. --> Emmet Doyle
