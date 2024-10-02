@@ -18,6 +18,34 @@ Include your answers in this document (Rmd file). Make sure that it knits proper
 All submissions to the github repo will be automatically uploaded for grading once the due date is passed.
 Submit a link to your repository on Canvas (only one submission per team) to signal to the instructors that you are done with your submission.
 
+
+library(classdata)
 head(ames)
 View(ames)
 colnames(ames)
+
+The column names that we are working with are, 
+
+"Parcel ID"             "Address"              
+ [3] "Style"                 "Occupancy"            
+ [5] "Sale Date"             "Sale Price"           
+ [7] "Multi Sale"            "YearBuilt"            
+ [9] "Acres"                 "TotalLivingArea (sf)" 
+[11] "Bedrooms"              "FinishedBsmtArea (sf)"
+[13] "LotArea(sf)"           "AC"                   
+[15] "FirePlace"             "Neighborhood"
+
+
+```{r}
+library(ggplot2)
+
+ggplot(ames, aes(x = `Sale Price`)) +
+  geom_histogram(binwidth = 500000, fill = "blue", color = "black") +
+  labs(title = "Histogram of Sale Price",
+       x = "Sale Price",
+       y = "Frequency")
+```
+
+The vast majority of the observations fall in the same general range but there are a few huge outliers that are far more expensive then other observations. 
+
+
